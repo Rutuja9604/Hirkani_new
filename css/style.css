@@ -1,0 +1,345 @@
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff8f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+.main-header {
+  background-color: #523d44;
+  color: white;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Hero */
+.hero {
+  background: url('../images/banner2.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-overlay {
+ /* background: rgba(0, 0, 0, 0.5);*/
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  text-align: left;
+  color: white;
+  margin-left: 60px;
+  
+}
+
+.hero-content h1 {
+  font-size: 5em;
+  margin-bottom: 10px;
+  animation: fadeIn 3s ease-in-out;
+}
+
+.hero-content p {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.hero-content button {
+  padding: 24px 48px;
+  background: #690243;
+  border: none;
+  color: white;
+  font-size: 3em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s;
+}
+
+.hero-content button:hover {
+  background: #f50057;
+  transform: scale(1.05);
+}
+
+/* about*/
+.about {
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 36px;
+  color: #d81b60;
+  margin-bottom: 40px;
+}
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.about-box {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  max-width: 500px;
+  text-align: left;
+}
+
+.about-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about-box .info {
+  padding: 20px;
+}
+
+.about-box .info h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.about-box .info p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+
+/* Contact */
+.contact {
+  padding: 60px 20px;
+  background: #f8bbd0;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+/* Footer */
+.main-footer {
+  background-color: #e91e63;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .service-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-content h1 {
+    font-size: 2.2em;
+  }
+  .hero-content p {
+    font-size: 2em;
+  }
+
+  .hero-content button {
+    font-size: 1.6em;
+    padding: 16px 30px;
+  }
+}
+/*Studio section*/
+
+.studio-section {
+  padding: 80px 20px;
+  background: #fff0f5;
+  
+}
+
+.studio-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: right;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.studio-text {
+  flex: 1 1 400px;
+  color: #333;
+  justify-content: left;
+}
+
+.studio-text h2 {
+  font-size: 2.5rem;
+  color: #d81b60;
+  margin-bottom: 20px;
+}
+
+.studio-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.studio-image {
+  flex: 1 1 200px;
+}
+
+.studio-image img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+}
+/*.slider-section {
+  padding: 60px 0;
+  text-align: center;
+}*/
+
+.slider {
+  position: relative;
+  max-width: 1000px;
+  height: 500px; /* 👈 Set a fixed height */
+  margin: auto;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  background-color: #f9f9f9; /* Optional: avoids white flash between slides */
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  height: 100%; /* 👈 Match parent height */
+  animation: fade 1s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.slide.active {
+  display: block;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%; /* 👈 Force image to fill slider */
+  object-fit: cover; /* 👈 Maintain aspect ratio, fill container */
+  display: block;
+  border-radius: 20px;
+}
+
+
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .slider {
+    width: 90%;
+  }
+}
+
+/*appointment form
+
+.appointment-section {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.appointment-section h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #d81b60;
+}
+
+.appointment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.appointment-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.appointment-form input,
+.appointment-form select,
+.appointment-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.appointment-form button {
+  padding: 12px;
+  background-color: #d81b60;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.appointment-form button:hover {
+  background-color: #c2185b;
+}
+
+*/
